@@ -49,3 +49,4 @@
    else:  # tfidf
        vectorizer = TfidfVectorizer()
        features = vectorizer.fit_transform(corpus)
+![屏幕截图 2025-03-31 154212](https://github.com/user-attachments/assets/5509674f-0b84-40ed-9ad0-a2d925bb8403)
