@@ -1,4 +1,4 @@
-# bayes-mails-classify-master-main
+# bayes-mails-classify
 
 # 项目名称
 ## 核心功能说明
