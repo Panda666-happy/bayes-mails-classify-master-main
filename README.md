@@ -36,7 +36,7 @@
 
 #### TF-IDF特征加权
 - ​**数学形式**：
-$$ \text{TF-IDF}(t,d) = \text{TF}(t,d) \times \log\left( \frac{N}{\text{DF}(t) + 1} \right) $$
+  $$\text{TF-IDF}(t,d) = \text{TF}(t,d) \times \log\left( \frac{N}{\text{DF}(t) + 1} \right)$$
   其中TF(t,d)为词t在文档d中的出现次数
 - ​**优势**：同时考虑词频(TF)和逆文档频率(IDF)，更好体现词重要性
 
