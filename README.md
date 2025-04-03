@@ -25,6 +25,35 @@
   其中TF(t,d)为词t在文档d中的出现次数
 - ​**优势**：同时考虑词频(TF)和逆文档频率(IDF)，更好体现词重要性
 
+## 数据处理流程
+
+### 1. 文本清洗
+
+系统首先对原始邮件文本进行深度清洗：
+```python
+# 使用正则表达式去除标点、数字等干扰字符
+line = re.sub(r'[.【】0-9、——。，！~\*]', '', line)
+```
+
+### 2. 中文分词处理
+
+采用jieba分词工具进行精准的中文分词：
+```python
+# 执行分词并过滤无效词汇
+line = cut(line)  # jieba分词
+line = filter(lambda word: len(word) > 1, line)  # 过滤单字词
+```
+
+### 3. 样本平衡处理
+
+针对数据不平衡问题，系统集成了SMOTE过采样技术：
+```python
+# 使用SMOTE算法平衡样本分布
+from imblearn.over_sampling import SMOTE
+smote = SMOTE(random_state=42)
+vector_resampled, labels_resampled = smote.fit_resample(vector, labels)
+```
+
 #### 特征模式切换方法
 1. ​**参数化设计**：通过配置参数选择特征模式：
    ```python
