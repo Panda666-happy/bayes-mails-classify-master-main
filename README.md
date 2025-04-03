@@ -4,6 +4,7 @@
 ## 核心功能说明
 
 ### 算法基础：多项式朴素贝叶斯分类器
+
 本仓库采用**多项式朴素贝叶斯分类器**实现文本分类任务，其核心假设是：
 1. ​**特征条件独立性**：假设各特征（如单词）在给定类别下相互独立，即特征联合概率可分解为独立概率的乘积：
    $$P(x_1,x_2,...,x_n|y) = \prod_{i=1}^n P(x_i|y)$$
@@ -55,6 +56,7 @@ vector_resampled, labels_resampled = smote.fit_resample(vector, labels)
 ```
 
 #### 特征模式切换方法
+
 1. ​**参数化设计**：通过配置参数选择特征模式：
    ```python
    if mode == "high_freq":
@@ -62,4 +64,29 @@ vector_resampled, labels_resampled = smote.fit_resample(vector, labels)
    else:  # tfidf
        vectorizer = TfidfVectorizer()
        features = vectorizer.fit_transform(corpus)
+   
+# 代码运行结果
+
+## 默认分类模式 classify1.py
 ![屏幕截图 2025-03-31 154212](https://github.com/user-attachments/assets/5509674f-0b84-40ed-9ad0-a2d925bb8403)
+
+## 局部切换 class_local.py
+![屏幕截图 2025-04-03 114742](https://github.com/user-attachments/assets/1bab8026-10b5-45a5-b2ad-c8b5f085b920)
+
+## 局部切换  class_global.py
+![屏幕截图 2025-04-03 114904](https://github.com/user-attachments/assets/7b7769c8-89f3-4fd8-8e76-113eee205a84)
+
+## 样本平衡处理  sample.py
+![屏幕截图 2025-04-03 115120](https://github.com/user-attachments/assets/45d3e83e-dc36-4d27-ad0a-481a5bb3a419)
+
+## 添加全局方法选择/样本平衡处理/模型评估标准 all.py
+![屏幕截图 2025-04-03 115330](https://github.com/user-attachments/assets/4d1d6a5c-641f-4aec-9135-96bfca790174)
+
+
+
+
+
+
+
+
+
